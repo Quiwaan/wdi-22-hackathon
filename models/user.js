@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     minLength: 6,
     maxLength: 99,
   },
-  houses: [
+  housematess: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
