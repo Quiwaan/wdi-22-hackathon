@@ -1,0 +1,26 @@
+{
+  "name": "wdi-22-hackathon",
+  "version": "1.0.0",
+  "description": "Something clever using the MERN stack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quiwaan/wdi-22-hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Quiwaan/wdi-22-hackathon/issues"
+  },
+  "homepage": "https://github.com/Quiwaan/wdi-22-hackathon#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "mongoose": "^5.4.8"
+  }
+}
