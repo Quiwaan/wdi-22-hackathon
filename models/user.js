@@ -21,12 +21,6 @@ const userSchema = new mongoose.Schema({
     minLength: 6,
     maxLength: 99,
   },
-  housematess: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-    },
-  ],
 });
 
 userSchema.set('toJSON', {
@@ -44,7 +38,7 @@ userSchema.methods.isAuthenticated = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-user.Schema.pre('save', function(next) {
+userSchema.pre('save', function(next) {
   this.password = bcrypt.hashSync(this.password, 12);
   next();
 });

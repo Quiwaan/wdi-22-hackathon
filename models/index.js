@@ -10,9 +10,5 @@ mongoose.connect(
 
 // TODO: Require your other models, and export them
 
-// NOTE: Your files can have multiple module.exports statements!
-// Make sure to export both your Museum and Piece models!
-module.exports.User = require('./model');
-module.exports.Item = require('./item');
-module.exports.Museum = require('./house');
-module.exports.Piece = require('./piece');
+module.exports.User = require('./user');
+module.exports.House = require('./house');
