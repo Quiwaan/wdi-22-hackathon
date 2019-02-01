@@ -3,7 +3,9 @@ const router = express.Router()
 const db = require('../models ')
 
 
-
+router.post('/stores', (req, res) => {
+    db.Store.find()
+})
 
 
 
