@@ -1,20 +1,18 @@
 require('dotenv').config();
 const express = require('express');
 const expressJwt = require('express-jwt');
-
-require('dotenv').config();
+const cors = require('cors')
 
 const app = express();
-
+app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: false }));
 
-function fromRequest(req) {
-  if (
-    req.body.headers.Authrorization &&
-    req.body.headers.Authrorization.split(' ')[0] === 'Bearer'
-  ) {
-    return req.body.headers.Authrorization.split(' ')[1];
+function fromRequest(req){
+  console.log("REQ.BODY",req.body.headers)
+  if(req.body.headers.Authorization &&
+    req.body.headers.Authorization.split(' ')[0] === 'Bearer'){
+    return req.body.headers.Authorization.split(' ')[1];
   }
   return null;
 }
