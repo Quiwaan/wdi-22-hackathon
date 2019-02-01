@@ -37,7 +37,26 @@ const createHouseStark = async () => {
   });
 };
 
-createHouseStark();
+const addGroceriesToBuy = async () => {
+  // await db.House.update(
+  //   { name: 'Stark' },
+  //   { $push: { items: { name: 'eggs' } } }
+  // );
+  await db.House.update(
+    { name: 'Stark' },
+    { $push: { items: { name: 'swords', store: 'Blacksmith' } } }
+  );
+};
+
+const neddardBoughtSwords = async () => {
+  const neddard = await db.User.findOne({ name: 'Neddard' });
+  console.log(neddard._id);
+  const houseToUpdate = await db.House.findOne({ name: 'Stark' });
+  console.log(houseToUpdate.name);
+  const itemsToUpdate = await houseToUpdate.items;
+  console.log(itemToUpdates);
+  // itemToUpdate.updateOne({ whenBought: new Date(), whoBought: neddard._id });
+};
 
 const readDB = async () => {
   const house1 = await db.House.findOne({ name: 'Stark' });
@@ -48,4 +67,7 @@ const readDB = async () => {
   console.log(house2);
 };
 
-// readDB();
+// createHouseStark();
+// addGroceriesToBuy();
+
+neddardBoughtSwords(neddardBoughtSwords);
