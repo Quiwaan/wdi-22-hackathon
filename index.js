@@ -11,11 +11,14 @@ app.use(express.urlencoded({extended: false}));
 
 
 function fromRequest(req){
-    if(req.body.headers.Authrorization && req.body.headers.Authrorization.split(' ')[0] === 'Bearer'){
-        return req.body.headers.Authrorization.split(' ')[1]
+    console.log("REQ.BODY",req.body.headers)
+    if(req.body.headers.Authorization &&
+      req.body.headers.Authorization.split(' ')[0] === 'Bearer'){
+      return req.body.headers.Authorization.split(' ')[1];
     }
-    return null
-}
+    return null;
+  }
+  
 
 app.use('/auth', expressJwt({
 	secret: process.env.JWT_SECRET,
